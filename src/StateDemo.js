@@ -19,6 +19,13 @@ class StateDemo extends React.Component {
         )
     }
 
+    shouldComponentUpdate(nextProps, nextState){
+        if(nextState.count !== this.state.count) {
+            return true
+        }
+        
+        return false
+    }
 
     increase = () => {
 

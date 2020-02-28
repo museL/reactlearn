@@ -39,7 +39,7 @@ class Input extends React.Component {
         )
     }
     inputOnchage = (e) => {
-        
+
         this.setState({
             value: e.target.value
         })
@@ -52,10 +52,37 @@ class Input extends React.Component {
     }
 }
 
+
+class Footer extends React.Component {
+    constructor(props) {
+        super(props)
+    }
+
+    render() {
+        return <p>{this.props.text}</p>
+    }
+
+    componentWillUpdate(){
+        console.log('footer did update')
+    }
+
+    shouldComponentUpdate(nextProps, nextState){
+
+        if(nextProps.text !== this.props.text){
+            return true
+        }
+        return false
+    }
+    //React 默认: 父组件更新，子组件则无条件更新
+    //性能优化对于 react 更为重要！
+    //SCU 一定要用吗？ 需要的时候才用
+}
+
 class TodoListDEmo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            text: '底部文字',
             list: [
                 {
                     id: "id-1",
@@ -79,6 +106,7 @@ class TodoListDEmo extends React.Component {
             <div>
                 <Input submitTitle={this.onSumbitTitle} />
                 <List list={this.state.list}></List>
+                <Footer text={this.state.text}/>
             </div>
         )
     }
@@ -87,7 +115,7 @@ class TodoListDEmo extends React.Component {
             list: [...this.state.list, {
                 id: `id-${Date.now()}`,
                 title
-            }]
+            }],
         })
     }
 }

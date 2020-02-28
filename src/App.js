@@ -7,7 +7,11 @@ import EventDemo from './text_3'
 import FromDemo from './text_4'
 import TodoListDEmo from  './text5'
 import StateDemo from './StateDemo'
-
+import ProtalsDemo from './text6'
+import ThemeDemo from './ThemeLink'
+import LazyDemo from './lazyDemo'
+import HOCDemo from './HOCDemo'
+import RenderPropDemo from './RenderPropDemo'
 class App extends React.Component {
 	constructor(props){
 		super(props);
@@ -31,12 +35,17 @@ class App extends React.Component {
 	render(){
 		return (
 			<div className="App">
-			  <List list={this.state.list}></List>
+			  {/* <List list={this.state.list}></List>
 			  <JSXBaseDemo></JSXBaseDemo>
 			  <EventDemo></EventDemo>
-			  <FromDemo></FromDemo>
+			  <FromDemo></FromDemo> */}
 			  <TodoListDEmo></TodoListDEmo>
-			  <StateDemo></StateDemo>
+			  <HOCDemo a="100"></HOCDemo>
+			  <RenderPropDemo a="100"></RenderPropDemo>
+			  {/* <StateDemo></StateDemo>
+			  <ProtalsDemo>modal 内容</ProtalsDemo>
+			  <ThemeDemo></ThemeDemo>
+			  <LazyDemo></LazyDemo> */}
 			</div>
 		  )
 	}
