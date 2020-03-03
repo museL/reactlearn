@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types"
-
+import { Link,useParams } from 'react-router-dom'
 class List extends React.Component {
     constructor(props) {
         super(props)
@@ -8,6 +8,7 @@ class List extends React.Component {
 
     render() {
         const { list } = this.props;
+        //获取 url 参数，如 '/TodoListDEmo/100'
         return (
             <ul>
                 {list.map((item, index) => {
@@ -102,6 +103,7 @@ class TodoListDEmo extends React.Component {
 
     render() {
         //受控组件
+        console.log(this.props);
         return (
             <div>
                 <Input submitTitle={this.onSumbitTitle} />
@@ -109,6 +111,9 @@ class TodoListDEmo extends React.Component {
                 <Footer text={this.state.text}/>
             </div>
         )
+    }
+    componentDidMount() {
+     
     }
     onSumbitTitle = (title) => {
         this.setState({

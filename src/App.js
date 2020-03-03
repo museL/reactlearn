@@ -12,6 +12,7 @@ import ThemeDemo from './ThemeLink'
 import LazyDemo from './lazyDemo'
 import HOCDemo from './HOCDemo'
 import RenderPropDemo from './RenderPropDemo'
+import TodoList from './TodoList'
 class App extends React.Component {
 	constructor(props){
 		super(props);
@@ -39,9 +40,10 @@ class App extends React.Component {
 			  <JSXBaseDemo></JSXBaseDemo>
 			  <EventDemo></EventDemo>
 			  <FromDemo></FromDemo> */}
-			  <TodoListDEmo></TodoListDEmo>
+			  {/* <TodoListDEmo></TodoListDEmo>
 			  <HOCDemo a="100"></HOCDemo>
-			  <RenderPropDemo a="100"></RenderPropDemo>
+			  <RenderPropDemo a="100"></RenderPropDemo> */}
+			  <TodoList></TodoList>
 			  {/* <StateDemo></StateDemo>
 			  <ProtalsDemo>modal 内容</ProtalsDemo>
 			  <ThemeDemo></ThemeDemo>
